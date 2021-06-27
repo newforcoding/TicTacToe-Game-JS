@@ -55,9 +55,9 @@ h1 {
 	padding-bottom: 8px;
 }
 .board {
+	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	display: grid;
 	grid-gap: 0px;
 	flex-grow: 1;
 	padding: 10px;
