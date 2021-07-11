@@ -6,13 +6,17 @@ body {
 	font-family: "Times New Roman", Times, serif;
 	color: cadetblue;
 }
+.title {
+	max-width: 550px;
+}
 .wrapper {
 	max-width: 1440px;
 	height: 800px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	margin: 0 auto;
+	padding: 40px;
 }
 .start {
 	width: 175px;
@@ -36,6 +40,8 @@ h1 {
 	background: #4c6986;
 }
 .game {
+	display: flex;
+	flex-direction: column;
 	width: 500px;
 	height: 500px;
 }
@@ -43,6 +49,14 @@ h1 {
 	display: flex;
 	color: #9a9a9a;
 	font-size: 24px;
+}
+.player-x.active {
+	color: #428ed7;
+	border-color: #428ed7;
+}
+.player-o.active {
+	color: #d7bafb;
+	border-color: #d7bafb;
 }
 .header .player-x {
 	flex: 1;
@@ -78,4 +92,21 @@ h1 {
 }
 .board-title:hover {
 	background: #eee;
+}
+.tile-x {
+	color: #42bed7;
+}
+.tile-o {
+	color: #d7bafb;
+}
+.tile-winner span {
+	color: #23ce6b;
+}
+@media only screen and(max-width:1200px) {
+	.wrapper {
+		flex-direction: column;
+	}
+	.left {
+		margin-bottom: 50px;
+	}
 }
