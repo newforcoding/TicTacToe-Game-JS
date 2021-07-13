@@ -1,38 +1,53 @@
-export default class Indexview{
+// export default class Indexview{
      
-updateBoard(index){
-     this.updateTurn(index);
-     const winningCombinations = index.findWinnningCombinations()
-      for(let i=0;i<index.board.length;i++){
-        const tile = document.querySelector(`.board-title 
-        [data-index='${i}']`); 
-
-        tile.classList.remove('tile-winner')
-
-       let tileType = index.board[i] == 'X' ? "tile-x" : "tile-o";
-        
-       tile.innerHTML = `<span class="${tileType}">${index.board[i] ? index.board[i] : ""}</span>`
+// updateBoard(index){
+//      this.updateTurn(index);
+//      const winningCombinations = index.findWinnningCombinations()
       
-       if(winningCombinations && winningCombinations.includes(i)){
-           tile.classList.add('tile-winner')
-           console.log(tile.classList.add('tile-winner'))
-       }
-    }
+//      for(let i=0;i<index.board.length;i++){
+//         const tile = document.querySelector(`.board-title 
+//         [data-index='${i}']`); 
 
+//         tile.classList.remove('tile-winner')
+
+//        let tileType = index.board[i] == 'X' ? "tile-x" : "tile-o";
+        
+//        tile.innerHTML = `<span class="${tileType}">${index.board[i] ? index.board[i] : ""}</span>`
+      
+//        if(winningCombinations && winningCombinations.includes(i)){
+//            tile.classList.add('tile-winner')
+//            console.log(tile.classList.add('tile-winner'))
+//        }
+//     }
+
+//  }
+
+//  updateTurn(index){
+//      let playerX = document.querySelector('.player-x')
+//      let playerO = document.querySelector('.player-o')
+     
+//      playerX.classList.remove('active')
+//      playerO.classList.remove('active')
+     
+//      if(index.turn == 'X'){
+//          playerX.classList.add('active')
+//      }else{
+//          playerO.classList.add('active')
+//      }
+//  }
+
+// }
+
+
+export default class Indexview{
+ constructor(){
+     console.log('GamView Board')
  }
-
- updateTurn(index){
-     let playerX = document.querySelector('.player-x')
-     let playerO = document.querySelector('.player-o')
-     
-     playerX.classList.remove('active')
-     playerO.classList.remove('active')
-     
-     if(index.turn == 'X'){
-         playerX.classList.add('active')
-     }else{
-         playerO.classList.add('active')
+ updateBoard(index){
+     for(let i=0;i<index.board.length;i++){
+         const tile = document.querySelector(`.board-title[data-index='${i}']`)
+        //  console.log(tile)
+        tile.textContent = index.board[i]
      }
  }
-
 }
