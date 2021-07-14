@@ -40,16 +40,14 @@ import Indexview from './indexview.js'
 let index = new Index()
 let indexView = new Indexview()
 
-indexView.updateBoard(index)
-console.log(index.board)
-console.log('Main turn',index.turn)
-index.nextTurn();
-console.log('Main turn',index.turn)
-index.makeMove(2)
-console.log(index.board)
-index.nextTurn()
-index.makeMove(4)
-console.log(index.board)
+const tiles = document.querySelectorAll(".board-title")
+tiles.forEach((tile)=>{
+    tile.addEventListener('click',()=>{
+        onTileClick(tile.dataset.index)
+    })
+})
 
-indexView.updateBoard(index)
-
+function onTileClick(i){
+    index.makeMove(i)
+    indexView.updateBoard(index)
+}
